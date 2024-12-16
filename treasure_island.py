@@ -258,7 +258,6 @@ volcano = r"""
 
 """
 
-
 you_win = r"""
 
 CORRECT GUESS!!!
@@ -270,9 +269,6 @@ __   _____  _   _  __        _____ _   _
   |_| \___/ \___/     \_/\_/  |___|_| \_|
 
 """
-
-
-
 
 you_lose = r"""
 
@@ -288,7 +284,6 @@ __     ______  _    _   _      ____   _____ ______
 
 
 """
-
 
 thanks_for_playing = r"""
 
@@ -308,6 +303,10 @@ thanks_for_playing = r"""
 """
 def tresure_island_game():
     print(tresure_island)
+    print("Hello Dear adventurer!!!")
+    
+
+
 
 
 def play_again():
