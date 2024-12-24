@@ -1,4 +1,4 @@
-tresure_island = r"""
+treasure_island = r"""
 
 sdSS_SSSSSSbs   .S_sSSs      sSSs    sSSs   .S       S.    .S_sSSs      sSSs         .S    sSSs  S.       .S_SSSs     .S_sSSs     .S_sSSs    
 YSSS~S%SSSSSP  .SS~YS%%b    d%%SP   d%%SP  .SS       SS.  .SS~YS%%b    d%%SP        .SS   d%%SP  SS.     .SS~SSSSS   .SS~YS%%b   .SS~YS%%b   
@@ -99,7 +99,7 @@ jack = r"""
 
 """
 
-deablo = r"""
+Devil = r"""
 
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⡠⠤⠀⠂⠀⠀⠀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⡶⢠⠆⡰⡦⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠐⠒⠤⠤⠤⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠴⠢⠔⠒⠓⠆⡠⠤⠀⠀⣀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠠⣔⣿⡃⠏⣠⣧⡸⣇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠩⠕⣒⣈⡲⠤⡤⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
@@ -301,19 +301,30 @@ thanks_for_playing = r"""
 
 
 """
-def tresure_island_game():
-    print(tresure_island)
-    print("Hello Dear adventurer!!!")
+
+def treasure_island_game():
+    print(treasure_island)
+    print("Welcome to Treasure Island! Your goal is to survive the treacherous journey and find the legendary treasure.")
+    print("You find yourself at the Initialization Spot. The rain pours heavily, and lightning strikes the ground around you.")
+    lightning_round_option = input("In front of you, there's an umbrella and a wooden cart. Which will you choose to protect yourself? umbrella/cart \n").lower()
     
+    if lightning_round_option == "umbrella":
+        print(lightning)
+        print("The lightning strikes the umbrella, electrocuting you. Game Over!")
+        print(you_lose)
+    elif lightning_round_option == "cart":
+        print("The wooden cart provides shelter from the rain and keeps you safe from the lightning. You move forward!")
 
-
+    else:
+        print("Please enter right option")
+        
 
 
 def play_again():
     while True:
         again = input("Do you want to play again? (yes/no): ").strip().lower()
         if again in ('yes', 'y'):
-            tresure_island_game()
+            treasure_island_game()
         elif again in ('no', 'n'):
             print(thanks_for_playing)
             break
@@ -322,5 +333,5 @@ def play_again():
 
 
 if __name__=="__main__":
-    tresure_island_game()
+    treasure_island_game()
     play_again()
