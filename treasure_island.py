@@ -1,3 +1,4 @@
+import time
 treasure_island = r"""
 
 sdSS_SSSSSSbs   .S_sSSs      sSSs    sSSs   .S       S.    .S_sSSs      sSSs         .S    sSSs  S.       .S_SSSs     .S_sSSs     .S_sSSs    
@@ -272,7 +273,6 @@ __   _____  _   _  __        _____ _   _
 
 you_lose = r"""
 
-NO MORE GUESSES LEFT!!!
 
 __     ______  _    _   _      ____   _____ ______ 
 \ \   / / __ \| |  | | | |    / __ \ / ____|  ____|
@@ -314,12 +314,64 @@ def treasure_island_game():
         print(you_lose)
     elif lightning_round_option == "cart":
         print("The wooden cart provides shelter from the rain and keeps you safe from the lightning. You move forward!")
+        time.sleep(4)
+        fire_round_option = input("You reach a field surrounded by blazing fire. There's a water bucket and a sandbag in front of you. Which do you take? water_bucket/ sandbag \n").lower()
 
-    else:
-        print("Please enter right option")
+        if fire_round_option == "water_bucket":
+            print(fire)
+            print("The fire rages uncontrollably, and the water only makes it worse. You're trapped and burned. Game Over!")
+            print(you_lose)
         
+        elif fire_round_option == "sandbag":
+            print("You smother the flames with the sand and create a safe path. You advance to the next stage!")
+            time.sleep(4)
+            print("The ground beneath you trembles, and undead creatures start emerging from the soil!")
+            undead_field_option = input("You spot a holy amulet and a steel sword. Which one do you take? holy_amulet/steel_sword \n").lower()
 
+            if undead_field_option == "steel_sword":
+                print(undead)
+                print("The undead are unaffected by the sword and overwhelm you. Game Over!")
+                print(you_lose)
 
+            elif undead_field_option == "holy_amulet":
+                print("The holy light from the amulet banishes the undead, clearing your path. You proceed!")
+                time.sleep(4)
+                print("A shadowy figure appears—it’s Jack the Ripper, a fearsome monster with razor-sharp claws.")
+                jack_round_option = input("You see a decoy mannequin and a silver dagger nearby. Which do you choose? mannequin/dagger \n").lower()
+
+                if jack_round_option == "dagger":
+                    print(jack)
+                    print("The dagger fails to harm Jack the Ripper, and you’re defeated. Game Over!")
+                    print(you_lose)
+                
+                elif jack_round_option == "mannequin":
+                    print("The monster tears through the mannequin, giving you time to escape. You survive!")
+                    time.sleep(4)
+                    print("You find yourself near the mouth of an active volcano. The heat is unbearable, and the ground shakes.")
+                    volcano_round_option = input("You notice a fireproof cloak and a grappling hook. Which do you pick? cloak/hook \n").lower()
+
+                    if volcano_round_option == "hook":
+                        print(volcano)
+                        print("The grappling hook snaps in the intense heat, and you fall into the lava. Game Over!")
+                        print(you_lose)
+                    elif volcano_round_option == "cloak":
+                        print("The cloak protects you as you make your way across the lava. You move forward!")
+                        time.sleep(4)
+                        print("You finally face Diablo, the Devil himself, guarding the treasure.")
+                        devil_round_option = input("In front of you are two objects: a mirror and a magical staff. Which do you choose? mirror/staff \n").lower()
+
+                        if devil_round_option == "staff":
+                            print(Devil)
+                            print("Diablo absorbs the staff’s power and overpowers you. Game Over!")
+                            print(you_lose)
+                        elif devil_round_option == "mirror":
+                            print("The mirror reflects Diablo’s own powers back at him, defeating him. You win!")
+                            print(you_win)
+                            time.sleep(4)
+                            print(treasure)
+                            print("Congratulations! You’ve defeated Diablo and uncovered the hidden treasure of Treasure Island. You are victorious!")
+                            
+    
 def play_again():
     while True:
         again = input("Do you want to play again? (yes/no): ").strip().lower()
