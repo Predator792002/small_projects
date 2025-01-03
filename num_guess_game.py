@@ -1,7 +1,5 @@
 from random import randint
 
-
-
 Welcome_intro = r"""
 Welcome to the number guessing game!!
 
@@ -30,9 +28,6 @@ __   _____  _   _  __        _____ _   _
   |_| \___/ \___/     \_/\_/  |___|_| \_|
 
 """
-
-
-
 
 you_lose = r"""
 
@@ -94,7 +89,6 @@ def num_guess_game():
     if num_of_guess == 0:
         print(f"The number was {number}")
         print(you_lose)
-
 
 def play_again():
     while True:
