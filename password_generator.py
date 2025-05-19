@@ -10,8 +10,8 @@ nr_numbers = int(input(f"How many numbers would you like?\n"))
 
 
 r_letters = ''.join(random.sample(letters , nr_letters))
-r_symbols = ''.join(random.sample(numbers , nr_symbols))
-r_numbers = ''.join(random.sample(symbols , nr_numbers))
+r_symbols = ''.join(random.sample(symbols , nr_symbols))
+r_numbers = ''.join(random.sample(numbers , nr_numbers))
 password_list =  list(r_letters+r_symbols+r_numbers)
 random.shuffle(password_list)
 password = ''
